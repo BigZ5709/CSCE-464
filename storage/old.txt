@@ -1,0 +1,17 @@
+<!--#include virtual="NatureSource/ch03/nature3/common/document_head.html"-->
+        <!-- index.html for NatureSource/ch03/nature3 -->
+        <table>
+            <!--#include virtual="NatureSource/ch03/nature3/common/logo_row.html"-->
+            <!--#include virtual="NatureSource/ch03/nature3/common/mainmenu_row.html"-->
+            <tr>
+                <td colspan="3">
+                    <h3>Welcome to Nature's Source: Protecting your health naturally!</h3>
+                    <p>Founded in 1998, Nature's Source was created ...</p>
+                </td>
+                <td colspan="2">
+                    <img src="images/outdoor4.jpg" alt="Get healthy and stay healthy" width="256" height="256">
+                </td>
+            </tr>
+            <!--#include virtual="NatureSource/ch03/nature3/common/footer_row.html"-->
+        </table>
+        <br>
