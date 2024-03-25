@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Number guessing game</title>
+    <style>
+        html {
+          font-family: sans-serif;
+        }
+  
+        body {
+          width: 50%;
+          max-width: 800px;
+          min-width: 480px;
+          margin: 0 auto;
+        }
+  
+        .lastResult {
+          color: black;
+          padding: 3px;
+        }
+      </style>
+  </head>
+
+  <body>
+    <h1>Number guessing game</h1>
+
+    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+
+    <div class="form">
+      <label for="guessField">Enter a guess: </label>
+      <input type="text" id="guessField" class="guessField">
+      <input type="submit" value="Submit guess" class="guessSubmit">
+    </div>
+
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="result"></p>
+      <p class="range"></p>
+    </div>
+
+    <script>
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
+      const guesses = document.querySelector('.guesses');
+      const result = document.querySelector('.result');
+      const range = document.querySelector('.range');
+      const guessSubmit = document.querySelector('.guessSubmit');
+      const submission = document.querySelector('.submission');
+      let submit = document.querySelector('guessSubmit');
+
+      let guessNum = 1;
+      let resetButton;
+
+      function checkGuess() {
+        const guess = parseInt(submission.value);
+        guesses.textContent += ' ' + guess;
+        submission.value = ' ';
+        guessNum++;
+
+        if(guessNum > 10) {
+          result.textContent = "Game Over!";
+          range.textContent = '';
+        } else if (guess === randomNumber) {
+          result.textContent = "Congratulations!";
+          range.textContent = '';
+        } else if (guess > randomNumber) {
+          result.textContent = "Wrong!";
+          range.textContent = "Too High!";
+        } else if (guess < randomNumber) {
+          result.textContent = "Wrong!";
+          range.textContent = "Too Low!";
+        }
+      }
+      guessSubmit.addEventListener('click', checkGuess);
+    </script>
+
+  </body>
+</html>

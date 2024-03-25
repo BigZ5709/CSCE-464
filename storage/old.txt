@@ -15,3 +15,52 @@
             <!--#include virtual="NatureSource/ch03/nature3/common/footer_row.html"-->
         </table>
         <br>
+
+<table summary="Overwatch Information" id="Light">
+            <tr>
+                <td rowspan="4" id="Light">
+                    <form id="Light">
+                        <label for="overwatch roles">What's your favorite role in Overwatch?</label> <br>
+                        <input type="radio" name="favorite role" value="Tank">
+                        <label for="tank">Tank</label><br>
+                        <input type="radio" name="favorite role" value="DPS">
+                        <label for="dps">DPS</label><br>
+                        <input type="radio" name="favorite role" value="Support">
+                        <label for="support">Support</label><br>
+                        <input type="submit">
+                    </form>
+                </td>
+                <td id="Light">
+                    <form id="btagSearch">
+                        <label>Battletag:</label><br>
+                        <input type="text" id="btag" name="btag" placeholder="BigZ#11384">
+                        <input type="submit">
+                    </form>
+                    <script>
+                        let btagform = document.getElementById("btagSearch");
+
+                        btagform.addEventListener("submit", searchBnet);
+
+                        function searchBnet(event) {
+                            event.preventDefault(); // Prevent the default form submission behavior
+                            let btag = document.getElementById("btag").value;
+                            window.open("https://overwatch.blizzard.com/en_US/search/?q=" + encodeURIComponent(btag), "_blank");
+                        }
+                    </script>
+                    <br>
+                    <label for="overwatch supports">Choose your favorite Overwatch support!</label>
+                    <select id="overwatch supports" name="overwatch supports">
+                        <option value="ana">Ana</option>
+                        <option value="baptiste">Baptiste</option>
+                        <option value="brigitte">Brigitte</option>
+                        <option value="illari">Illari</option>
+                        <option value="life weaver">Life Weaver</option>
+                        <option value="lucio">Lucio</option>
+                        <option value="mercy">Mercy</option>
+                        <option value="moira">Moira</option>
+                        <option value="zenyatta">Zenyatta</option>
+                    </select>
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
